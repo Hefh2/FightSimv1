@@ -8,5 +8,37 @@ namespace FightSim_v1
 {
     class Fighter
     {
+        protected int hp = 100;
+        protected int damage = 20;
+        public string name = "";
+        static Random generator = new Random();
+
+        public int Attack()
+        {
+            int randomDamage = generator.Next(2, 5);
+            return damage * randomDamage;
+        }
+
+        public void Hurt(int damageTaken)
+        {
+            hp = hp - damageTaken;
+        }
+
+        public bool IsAlive()
+        {
+            if (hp > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public int GetHp()
+        {
+            return hp;  
+        }
     }
 }
