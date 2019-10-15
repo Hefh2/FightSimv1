@@ -13,10 +13,20 @@ namespace FightSim_v1
         public string name = "";
         static Random generator = new Random();
 
+        public string getName()
+        {
+            //Gets the name of the fighter.
+        }
+
         public int Attack()
         {
             int randomDamage = generator.Next(2, 5);
             return damage * randomDamage;
+        }
+
+        public void Block()
+        {
+            //Will nullify all damage taken.
         }
 
         public void Hurt(int damageTaken)
