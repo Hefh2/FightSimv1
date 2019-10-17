@@ -10,7 +10,7 @@ namespace FightSim_v1
     {
         public Ryo()
         {
-            hp = 120;
+            hp = 1200;
             damage = 16;
         }
 

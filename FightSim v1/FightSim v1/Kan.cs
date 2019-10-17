@@ -10,7 +10,7 @@ namespace FightSim_v1
     {
         public Kan()
         {
-            hp = 80;
+            hp = 800;
             damage = 24;
         }
 

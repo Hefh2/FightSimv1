@@ -48,27 +48,29 @@ namespace FightSim_v1
                 Console.Clear();
                 //Get health and names for both friend and foe.
 
-                if (ryoFriend == true)
-                {
-                    Console.WriteLine("Choose your action:\n1. Punch\n2. Block");
-                    //  Want to be able to add special move later. Ryo - Ranged ball
-                } else {
-                    Console.WriteLine("Choose your action:\n1. Punch\n2. Block");
-                    //  Want to be able to add special move later. Kan - Shacksapucken
-                }
+                Console.WriteLine("Choose your action:\n1. Punch\n2. Block");
 
                 string answer = Console.ReadLine();
+
+
+                //      den vägrar skriva ut något efter den här readlinen och jag har oavsett inte mer tid att arbeta på projektet så jag stannar här.
+
+
+                Console.WriteLine("Gamer gamer till jorden kom");
 
                 if (answer == "1")
                 {
                     int damage = friend.Attack();
                     foe.Hurt(damage);
                     Console.WriteLine("You punched for " + damage + "damage.");
+
                 } else if (answer == "2") {
                     Console.WriteLine("onga bonga");
                     //block block
+
                 } else {
                     Console.WriteLine("Please give an answer: 1 or 2");
+
                 }
 
                 int foeMove = generator.Next(0, 2);
@@ -77,17 +79,28 @@ namespace FightSim_v1
                     int damage = foe.Attack();
                     friend.Hurt(damage);
                     Console.WriteLine("You got punched for " + damage + "damage.");
+
                 } else if (foeMove == 2) {
                     Console.WriteLine("onga bonga");
                     //block block
+
                 } else {
                     Console.WriteLine("What?");
                     //What?
+
                 }
 
             }
 
             //Check who's dead.
+            if (friend.IsAlive() == false)
+            {
+                Console.WriteLine("You lost");
+            }
+            else
+            {
+                Console.WriteLine("You won");
+            }
 
             Console.ReadLine();
         }

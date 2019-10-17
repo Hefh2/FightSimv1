@@ -15,7 +15,7 @@ namespace FightSim_v1
 
         public string getName()
         {
-            //Gets the name of the fighter.
+            return name;
         }
 
         public int Attack()
